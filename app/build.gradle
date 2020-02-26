@@ -10,10 +10,22 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        //签名打包
+        release {
+            storeFile file("C:\\Users\\lixiulia\\Videos\\android\\AndFixTest\\mytest.jks")
+            storePassword "test123456"
+            keyAlias "key0"
+            keyPassword "test123456"
+        }
+    }
     buildTypes {
         release {
+            debuggable releaseDebuggable
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            jniDebuggable = true
         }
     }
 }
@@ -25,4 +37,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.alipay.euler:andfix:0.5.0@aar' //引入AndFix热修复模块
 }
