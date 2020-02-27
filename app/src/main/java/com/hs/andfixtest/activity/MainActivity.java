@@ -1,11 +1,13 @@
 package com.hs.andfixtest.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.hs.andfixtest.R;
 import com.hs.andfixtest.andfix.AndFixPatchManager;
+import com.hs.andfixtest.andfix.MyService;
 import com.hs.andfixtest.util.Utils;
 
 import java.io.File;
@@ -19,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mPathDir = getExternalCacheDir().getAbsolutePath() + "/apatch";
-        File file = new File(mPathDir);
-        if (file == null || !file.exists()) {
-            file.mkdir();
-        }
+            mPathDir = getExternalCacheDir().getAbsolutePath() + "/apatch";
+            File file = new File(mPathDir);
+            if (file == null || !file.exists()) {
+                file.mkdir();
+            }
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 AndFixPatchManager.getInstance().addPatch(getPatchName());
             }
         });
+
+        startPatchServicr();
+    }
+
+    private void startPatchServicr() {
+        Intent intent = new Intent(this, MyService.class);
+        startService(intent);
     }
 
     private String getPatchName() {
