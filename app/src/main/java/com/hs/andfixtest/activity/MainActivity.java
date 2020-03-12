@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        startPatchServicr();
+        startPatchService();
     }
 
-    private void startPatchServicr() {
+    private void startPatchService() {
         Intent intent = new Intent(this, MyService.class);
         startService(intent);
     }

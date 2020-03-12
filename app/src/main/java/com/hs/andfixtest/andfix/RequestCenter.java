@@ -8,7 +8,7 @@ import com.hs.andfixtest.util.OnDownloadListener;
 import java.io.File;
 
 public class RequestCenter {
-    private static final String UPDATE_PATCH_URL = "http://192.168.8.67:3000/users/getPatchInfo";
+    private static final String UPDATE_PATCH_URL = "http://192.168.8.49:3000/users/getPatchInfo";
 //    private static final String DOWNLOAD_PATCH_URL = "http://192.168.8.67:3000/images/1.png";
 
     public static void requestPatchUpdateInfo(OnCommonResponse listener) {
