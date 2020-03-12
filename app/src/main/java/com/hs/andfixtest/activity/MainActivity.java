@@ -20,12 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-            mPathDir = getExternalCacheDir().getAbsolutePath() + "/apatch";
-            File file = new File(mPathDir);
-            if (file == null || !file.exists()) {
-                file.mkdir();
-            }
+        startPatchService();
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,19 +32,18 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndFixPatchManager.getInstance().addPatch(getPatchName());
+//                mPathDir = getExternalCacheDir().getAbsolutePath() + "/apatch";
+//                File file = new File(mPathDir);
+//                if (file == null || !file.exists()) {
+//                    file.mkdir();
+//                }
+//                AndFixPatchManager.getInstance().addPatch(mPathDir.concat("/hs").concat(SUFFIX));
             }
         });
-
-        startPatchService();
     }
 
     private void startPatchService() {
         Intent intent = new Intent(this, MyService.class);
         startService(intent);
-    }
-
-    private String getPatchName() {
-        return mPathDir.concat("/hs").concat(SUFFIX);
     }
 }
