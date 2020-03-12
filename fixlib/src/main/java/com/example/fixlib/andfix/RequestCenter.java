@@ -1,11 +1,8 @@
-package com.hs.andfixtest.andfix;
+package com.example.fixlib.andfix;
 
-import com.hs.andfixtest.andfix.BasePatch;
-import com.hs.andfixtest.util.MyOkHttpClient;
-import com.hs.andfixtest.util.OnCommonResponse;
-import com.hs.andfixtest.util.OnDownloadListener;
-
-import java.io.File;
+import com.example.fixlib.util.MyOkHttpClient;
+import com.example.fixlib.util.OnCommonResponse;
+import com.example.fixlib.util.OnDownloadListener;
 
 public class RequestCenter {
     private static final String UPDATE_PATCH_URL = "http://192.168.8.49:3000/users/getPatchInfo";

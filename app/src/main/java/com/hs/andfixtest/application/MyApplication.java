@@ -2,7 +2,8 @@ package com.hs.andfixtest.application;
 
 import android.app.Application;
 
-import com.hs.andfixtest.andfix.AndFixPatchManager;
+import com.example.fixlib.andfix.AndFixPatchManager;
+
 
 public class MyApplication extends Application {
     @Override

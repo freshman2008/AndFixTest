@@ -1,4 +1,4 @@
-package com.hs.andfixtest.andfix;
+package com.example.fixlib.andfix;
 
 import java.io.Serializable;
 

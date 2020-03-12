@@ -1,9 +1,9 @@
-package com.hs.andfixtest.andfix;
+package com.example.fixlib.andfix;
 
 import android.content.Context;
 
 import com.alipay.euler.andfix.patch.PatchManager;
-import com.hs.andfixtest.util.Utils;
+import com.example.fixlib.util.Utils;
 
 public class AndFixPatchManager {
     private static AndFixPatchManager instance = null;

@@ -1,6 +1,4 @@
-package com.hs.andfixtest.util;
-
-import com.hs.andfixtest.andfix.BasePatch;
+package com.example.fixlib.util;
 
 public interface OnCommonResponse{
     /**

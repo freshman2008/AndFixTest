@@ -1,4 +1,4 @@
-package com.hs.andfixtest.util;
+package com.example.fixlib.util;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -16,10 +16,5 @@ public class Utils {
             e.printStackTrace();
         }
         return versionNumber;
-    }
-
-    public static void printLog() {
-        String error = null;
-        Log.i("hello", error);
     }
 }

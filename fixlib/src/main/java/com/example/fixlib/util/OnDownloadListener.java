@@ -1,4 +1,4 @@
-package com.hs.andfixtest.util;
+package com.example.fixlib.util;
 
 import java.io.File;
 

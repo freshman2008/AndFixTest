@@ -1,4 +1,4 @@
-package com.hs.andfixtest.util;
+package com.example.fixlib.util;
 
 import android.util.Log;
 
@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URLDecoder;
 
 import okhttp3.Call;
 import okhttp3.Callback;

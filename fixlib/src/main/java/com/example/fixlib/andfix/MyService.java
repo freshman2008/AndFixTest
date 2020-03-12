@@ -1,4 +1,4 @@
-package com.hs.andfixtest.andfix;
+package com.example.fixlib.andfix;
 
 import android.app.IntentService;
 import android.content.Context;
@@ -7,9 +7,10 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
+
 import com.alibaba.fastjson.JSON;
-import com.hs.andfixtest.util.OnCommonResponse;
-import com.hs.andfixtest.util.OnDownloadListener;
+import com.example.fixlib.util.OnCommonResponse;
+import com.example.fixlib.util.OnDownloadListener;
 
 import java.io.File;
 
