@@ -2,6 +2,8 @@ package com.hs.andfixtest.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +17,7 @@ import java.io.File;
 public class MainActivity extends AppCompatActivity {
     private static final String SUFFIX = ".apatch";
     private String mPathDir;
-
+    public static Handler mHandler = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +42,19 @@ public class MainActivity extends AppCompatActivity {
                 AndFixPatchManager.getInstance().addPatch(mPathDir.concat("/hs").concat(SUFFIX));
             }
         });
+        mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                if (msg.what == 1001) {
+                    Log.d("hello", "startPatchService");
+                    startPatchService();
+                }
+            }
+        };
     }
 
-    private void startPatchService() {
+    public void startPatchService() {
         Intent intent = new Intent(this, MyService.class);
         startService(intent);
     }
