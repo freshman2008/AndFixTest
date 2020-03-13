@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void printLog() {
-        String error = "bug fixed.";
+        String error = null;
         Log.i("hello", error);
     }
 }

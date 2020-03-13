@@ -29,7 +29,7 @@ public class MyOkHttpClient {
         call.enqueue(new Callback() {
              @Override
              public void onFailure (Call call, IOException e){
-                 Log.d(TAG, "onFailure: ");
+                 Log.d(TAG, "onFailure: " + e.getMessage());
              }
 
              @Override

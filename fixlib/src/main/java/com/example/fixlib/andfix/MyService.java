@@ -64,7 +64,9 @@ public class MyService extends IntentService {
             public void onSuccess(String data) {
                 mBasePatchInfo = JSON.parseObject(data, BasePatch.class);
                 if (!TextUtils.isEmpty(mBasePatchInfo.data.downloadUrl)) {
+                    Log.i("hello", " 开始下载patch文件, url:" + mBasePatchInfo.data.downloadUrl);
                     downloadPatch(mBasePatchInfo.data.downloadUrl);
+                    Log.i("hello", " patch文件下载完成.");
                 }
             }
 
@@ -77,10 +79,12 @@ public class MyService extends IntentService {
 
     private void downloadPatch(String url) {
 //        mPatchFile = mPatchFileDir.concat(String.valueOf(System.currentTimeMillis())).concat(SUFFIX);
-        String pathName = String.valueOf(System.currentTimeMillis()).concat(SUFFIX);
+//        String pathName = String.valueOf(System.currentTimeMillis()).concat(SUFFIX);
+        String pathName = url.substring(url.lastIndexOf("/")+1);
         RequestCenter.downloadFile(url, mPatchFileDir, pathName, new OnDownloadListener() {
             @Override
             public void onDownloadSuccess(File file) {
+                Log.i("hello", "加载补丁包:" + file.getAbsolutePath());
                 AndFixPatchManager.getInstance().addPatch(file.getAbsolutePath());
             }
 
